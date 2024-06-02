@@ -1,4 +1,5 @@
 import 'package:coffee_app/const.dart';
+import 'package:coffee_app/navigators/app_drawer.dart';
 import 'package:coffee_app/navigators/bottom_nav_bar.dart';
 import 'package:coffee_app/pages/cart_page.dart';
 import 'package:coffee_app/pages/shop_page.dart';
@@ -33,6 +34,7 @@ class _HomePageState extends State<HomePage> {
         onTabChange: (index) => navigateBottomBar(index),
       ),
       body: _pages[_selectedIndex],
+      drawer: AppDrawer(),
     );
   }
 }

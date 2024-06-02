@@ -22,6 +22,13 @@ class _CoffeeDetailPageState extends State<CoffeeDetailPage> {
           Row(
             children: [
               IconButton(onPressed: (){}, icon: Icon(Icons.remove)),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(6)
+                ),
+                child: Text("3", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),)),
               IconButton(onPressed: (){}, icon: Icon(Icons.add))
             ],
           )

@@ -18,49 +18,52 @@ class _CartPageState extends State<CartPage> {
     return SafeArea(
         child: Scaffold(
           backgroundColor: backgroundColor,
-          body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text("Your Cart",
-                style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold )),
-            const SizedBox(
-              height: 25,
-            ),
-            Expanded(
-                child: ListView.builder(
-                    itemCount: 2,
-                    itemBuilder: (context, index) {
-                      Coffee coffee = Coffee(
-                          name: "Espresso",
-                          price: "3.50",
-                          imagePath: "lib/images/espresso.png");
-        
-                      return CartTile(
-                        coffee: coffee,
-                        onPressed: (){},);
-                    })),
-        
-                    GestureDetector(
-                      onTap: (){},
-                      child: Container(
-                        padding: const EdgeInsets.all(25),
-                        width: double.infinity,
-                        child: const Center(
-                          child: Text(
-                            "Pay Now",
-                            style: TextStyle(
-                              color: Colors.white
+          body: Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text("Your Cart",
+                  style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold )),
+              const SizedBox(
+                height: 25,
+              ),
+              Expanded(
+                  child: ListView.builder(
+                      itemCount: 2,
+                      itemBuilder: (context, index) {
+                        Coffee coffee = Coffee(
+                            name: "Espresso",
+                            price: "3.50",
+                            imagePath: "lib/images/espresso.png");
+                    
+                        return CartTile(
+                          coffee: coffee,
+                          onPressed: (){},);
+                      })),
+                    
+                      GestureDetector(
+                        onTap: (){},
+                        child: Container(
+                          padding: const EdgeInsets.all(25),
+                          width: double.infinity,
+                          child: const Center(
+                            child: Text(
+                              "Pay Now",
+                              style: TextStyle(
+                                color: Colors.white
+                              ),
                             ),
                           ),
+                          decoration: BoxDecoration(
+                            color: Colors.brown,
+                            borderRadius: BorderRadius.circular(12)
+                          ),
                         ),
-                        decoration: BoxDecoration(
-                          color: Colors.brown,
-                          borderRadius: BorderRadius.circular(12)
-                        ),
-                      ),
-                    )
-          ],
-        ),
+                      )
+            ],
+                    ),
+          ),
         drawer: const AppDrawer(),
         ));
   }

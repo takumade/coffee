@@ -55,7 +55,7 @@ class _CoffeeDetailPageState extends State<CoffeeDetailPage> {
                 child: Center(
                   child: Text(
                     "Add To Cart",
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                 ),
                 decoration: BoxDecoration(
@@ -137,7 +137,7 @@ class _CupSizeState extends State<CupSize> {
   void setSelectedValue(String? value) {
     setState(() => selectedValue = value);
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(

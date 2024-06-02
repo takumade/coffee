@@ -12,13 +12,7 @@ class CoffeeDetailPage extends StatefulWidget {
 }
 
 class _CoffeeDetailPageState extends State<CoffeeDetailPage> {
-  List<String> choices = ['S', 'M', 'L'];
-
-  String? selectedValue;
-
-  void setSelectedValue(String? value) {
-    setState(() => selectedValue = value);
-  }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -34,38 +28,119 @@ class _CoffeeDetailPageState extends State<CoffeeDetailPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset(widget.coffee.imagePath),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 10),
+                      child: Image.asset(widget.coffee.imagePath, width: 300, height: 250,)),
                     const Text(
                       "Q U A N T I T Y",
                       style: TextStyle(fontSize: 20, color: Colors.brown),
                     ),
                      SizedBox(height: 10),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        IconButton(
-                            onPressed: () {}, icon: const Icon(Icons.remove)),
-                        Container(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 8),
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(6)),
-                            child: const Text(
-                              "3",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 22),
-                            )),
-                        IconButton(
-                            onPressed: () {}, icon: const Icon(Icons.add))
-                      ],
-                    ),
+                    Amount(),
                     SizedBox(height: 30),
                     const Text(
                       "S I Z E",
                       style: TextStyle(fontSize: 20, color: Colors.brown),
                     ),
-                    Container(
+                    CupSize()
+                  ],
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: Container(
+                padding: EdgeInsets.all(25),
+                width: double.infinity,
+                child: Center(
+                  child: Text(
+                    "Add To Cart",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                decoration: BoxDecoration(
+                    color: Colors.brown,
+                    borderRadius: BorderRadius.circular(12)),
+              ),
+            )
+          ],
+        ),
+      ),
+    ));
+  }
+}
+
+class Amount extends StatefulWidget {
+  const Amount({
+    super.key,
+  });
+
+  @override
+  State<Amount> createState() => _AmountState();
+}
+
+class _AmountState extends State<Amount> {
+  int _count = 1;
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        IconButton(
+            onPressed: () {
+
+              setState(() {
+                
+                if (_count != 1)
+                  _count--;
+              });
+            }, icon: const Icon(Icons.remove)),
+        Container(
+            padding: const EdgeInsets.symmetric(
+                horizontal: 20, vertical: 8),
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(6)),
+            child: Text(
+              _count.toString(),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, fontSize: 22),
+            )),
+        IconButton(
+            onPressed: () {
+
+              setState(() {
+                _count++;
+              });
+            }, icon: const Icon(Icons.add))
+      ],
+    );
+  }
+}
+
+
+class CupSize extends StatefulWidget {
+  const CupSize({super.key});
+
+  @override
+  State<CupSize> createState() => _CupSizeState();
+}
+
+class _CupSizeState extends State<CupSize> {
+
+  List<String> choices = ['S', 'M', 'L'];
+
+  String? selectedValue;
+
+  void setSelectedValue(String? value) {
+    setState(() => selectedValue = value);
+  }
+  
+  @override
+  Widget build(BuildContext context) {
+    return Container(
                       child: Choice<String>.inline(
                         clearable: true,
                         value: ChoiceSingle.value(selectedValue),
@@ -99,30 +174,6 @@ class _CoffeeDetailPageState extends State<CoffeeDetailPage> {
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            GestureDetector(
-              onTap: () {},
-              child: Container(
-                padding: EdgeInsets.all(25),
-                width: double.infinity,
-                child: Center(
-                  child: Text(
-                    "Add To Cart",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-                decoration: BoxDecoration(
-                    color: Colors.brown,
-                    borderRadius: BorderRadius.circular(12)),
-              ),
-            )
-          ],
-        ),
-      ),
-    ));
+                    );
   }
 }

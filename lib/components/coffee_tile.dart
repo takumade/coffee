@@ -28,7 +28,7 @@ class CoffeeTile extends StatelessWidget {
           title: Text(coffee.name,   style: TextStyle(fontWeight: FontWeight.bold),),
           subtitle: Text("\$ ${coffee.price}"),
           leading: Image.asset(coffee.imagePath),
-          trailing: IconButton(icon: Icon(Icons.add), onPressed: onPressed,),
+          trailing: IconButton(icon: Icon(Icons.arrow_forward_rounded), onPressed: onPressed,),
         ),
       ),
     );

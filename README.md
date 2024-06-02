@@ -1,5 +1,6 @@
 # ☕ Coffee App
-Allow you to buy coffee. Created using Flutter
+
+This mobile application allows users to browse and purchase different types of coffee. Created using Flutter, it provides a smooth and responsive user interface, making the coffee buying process quick and enjoyable.
 
 ## 👨‍💻 Stack
 

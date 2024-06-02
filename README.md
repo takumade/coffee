@@ -1,4 +1,4 @@
-# Coffee App
+# ☕ Coffee App
 Allow you to buy coffee. Created using Flutter
 
 ## 👨‍💻 Stack

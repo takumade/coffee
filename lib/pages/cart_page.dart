@@ -1,4 +1,5 @@
 import 'package:coffee_app/components/cart_tile.dart';
+import 'package:coffee_app/const.dart';
 import 'package:coffee_app/models/coffee.dart';
 import 'package:coffee_app/navigators/app_drawer.dart';
 import 'package:flutter/material.dart';
@@ -16,10 +17,11 @@ class _CartPageState extends State<CartPage> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+          backgroundColor: backgroundColor,
           body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text("You Cart",
+            const Text("Your Cart",
                 style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold )),
             const SizedBox(
               height: 25,

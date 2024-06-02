@@ -9,7 +9,13 @@ Allow you to buy coffee. Created using Flutter
 
 ## 🧬 Samples
 
-Coming Soon 
+| Drawer | Intro Screen | Shop Screen |
+|---------|---------|---------|
+|    ![Drawer Screen](./mockups/m1.png)     | ![Intro Screen](./mockups/m2.png)        |  ![Screen Screen](./mockups/m3.png)       |   
+
+| Detail Screen | Cart Screen | 
+|---------|---------|
+|    ![Detail Screen](./mockups/m4.png)     | ![Shop Screen](./mockups/m5.png)        | 
 
 ## 💪🏼 Getting Started
 

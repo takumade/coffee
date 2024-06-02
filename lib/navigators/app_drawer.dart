@@ -33,24 +33,24 @@ class AppDrawer extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 25),
             child: ListTile(
-              leading: Icon(Icons.home, color: Colors.brown,),
-              title: Text("Home", style: TextStyle(color: Colors.brown,),),
+              leading: Icon(Icons.home, color: Colors.black54,),
+              title: Text("Home", style: TextStyle(color: Colors.black54,  fontWeight: FontWeight.w500),),
             ),
           ),
 
            const Padding(
             padding: EdgeInsets.symmetric(horizontal: 25),
             child: ListTile(
-              leading: Icon(Icons.shopping_bag_rounded, color: Colors.brown,),
-              title: Text("Cart", style: TextStyle(color: Colors.brown,),),
+              leading: Icon(Icons.shopping_bag_rounded, color: Colors.black54,),
+              title: Text("Cart", style: TextStyle(color: Colors.black54, fontWeight: FontWeight.w500),),
             ),
           ),
     
             const Padding(
             padding: EdgeInsets.symmetric(horizontal: 25),
             child: ListTile(
-              leading: Icon(Icons.info, color: Colors.brown,),
-              title: Text("About", style: TextStyle(color: Colors.brown,),),
+              leading: Icon(Icons.info, color: Colors.black54,),
+              title: Text("About", style: TextStyle(color: Colors.black54,  fontWeight: FontWeight.w500),),
             ),
     
      
@@ -62,8 +62,8 @@ class AppDrawer extends StatelessWidget {
            const Padding(
             padding: EdgeInsets.symmetric(horizontal: 25),
             child: ListTile(
-              leading: Icon(Icons.logout_rounded, color: Colors.brown,),
-              title: Text("Logout", style: TextStyle(color: Colors.brown,),),
+              leading: Icon(Icons.logout_rounded, color: Colors.black54,),
+              title: Text("Logout", style: TextStyle(color: Colors.black54 ,fontWeight: FontWeight.w500,),),
             ),
     
      

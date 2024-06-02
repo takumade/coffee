@@ -32,6 +32,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: MyBottomNavBar(
         onTabChange: (index) => navigateBottomBar(index),
       ),
+      body: _pages[_selectedIndex],
     );
   }
 }

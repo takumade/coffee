@@ -19,9 +19,10 @@ class _ShopPageState extends State<ShopPage> {
         child: Padding(
       padding: const EdgeInsets.all(25.0),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text("How would you like your coffee?",
-              style: TextStyle(fontSize: 20)),
+          const Text("Shop",
+              style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold )),
           const SizedBox(
             height: 25,
           ),

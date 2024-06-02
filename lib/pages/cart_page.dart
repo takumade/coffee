@@ -20,7 +20,7 @@ class _CartPageState extends State<CartPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("You Cart",
-              style: TextStyle(fontSize: 20)),
+              style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold )),
           SizedBox(
             height: 25,
           ),

@@ -1,5 +1,6 @@
 import 'package:coffee_app/components/coffee_tile.dart';
 import 'package:coffee_app/models/coffee.dart';
+import 'package:coffee_app/models/coffee_shop.dart';
 import 'package:flutter/material.dart';
 
 class ShopPage extends StatefulWidget {
@@ -10,6 +11,8 @@ class ShopPage extends StatefulWidget {
 }
 
 class _ShopPageState extends State<ShopPage> {
+
+  final coffeeShop = CoffeeShop();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -17,19 +20,16 @@ class _ShopPageState extends State<ShopPage> {
       padding: const EdgeInsets.all(25.0),
       child: Column(
         children: [
-          Text("How would you like your coffee?",
+          const Text("How would you like your coffee?",
               style: TextStyle(fontSize: 20)),
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
           Expanded(
               child: ListView.builder(
-                  itemCount: 4,
+                  itemCount: coffeeShop.coffeeShop.length,
                   itemBuilder: (context, index) {
-                    Coffee coffee = Coffee(
-                        name: "Espresso",
-                        price: "3.50",
-                        imagePath: "lib/images/black.png");
+                    Coffee coffee = coffeeShop.coffeeShop[index];
 
                     return CoffeeTile(
                       coffee: coffee,

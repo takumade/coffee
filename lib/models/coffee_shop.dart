@@ -32,9 +32,18 @@ class CoffeeShop {
   ];
 
   List<Coffee> _userCart = [];
-  
+
   List<Coffee> get userCart => _userCart;
   List<Coffee> get coffeeShop => coffeeShop;
+
+
+  void addItemToCart(Coffee coffee){
+    _userCart.add(coffee);
+  }
+
+  void removeItemToCart(Coffee coffee){
+    _userCart.remove(coffee);
+  }
 
   
 

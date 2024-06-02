@@ -1,16 +1,43 @@
-# coffee_app
+# Coffee App
+Allow you to buy coffee. Created using Flutter
 
-A new Flutter project.
+## 👨‍💻 Stack
 
-## Getting Started
+- Framework: Flutter
+- State Management: Bloc
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## 🧬 Samples
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Coming Soon 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 💪🏼 Getting Started
+
+### Clone the project and cd into it
+
+```bash
+git clone https://github.com/takumade/coffee
+cd ./coffee
+```
+
+### Install dependencies
+
+```bash
+flutter pub get
+```
+
+### Run
+
+```bash
+flutter run
+```
+
+## 🌻 Motivation
+
+I am relearning Flutter, so I am practising......
+
+## 🔗 Links
+
+Special thanks to these people...
+
+- [Mich Koko](https://github.com/mitchkoko)

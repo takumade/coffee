@@ -29,7 +29,7 @@ class _ShopPageState extends State<ShopPage> {
                     Coffee coffee = Coffee(
                         name: "Espresso",
                         price: "3.50",
-                        imagePath: "lib/images/espresso.png");
+                        imagePath: "lib/images/black.png");
 
                     return CoffeeTile(
                       coffee: coffee,

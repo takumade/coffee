@@ -1,5 +1,7 @@
 import 'package:coffee_app/const.dart';
 import 'package:coffee_app/navigators/bottom_nav_bar.dart';
+import 'package:coffee_app/pages/cart_page.dart';
+import 'package:coffee_app/pages/shop_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {

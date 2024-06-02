@@ -34,7 +34,7 @@ class CoffeeShop {
   List<Coffee> _userCart = [];
 
   List<Coffee> get userCart => _userCart;
-  List<Coffee> get coffeeShop => coffeeShop;
+  List<Coffee> get coffeeShop => _shop;
 
 
   void addItemToCart(Coffee coffee){

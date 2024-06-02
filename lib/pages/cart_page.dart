@@ -51,7 +51,9 @@ class _CartPageState extends State<CartPage> {
                             child: Text(
                               "Pay Now",
                               style: TextStyle(
-                                color: Colors.white
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16
                               ),
                             ),
                           ),

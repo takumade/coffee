@@ -31,5 +31,12 @@ class CoffeeShop {
     )
   ];
 
+  List<Coffee> _userCart = [];
+  
+  List<Coffee> get userCart => _userCart;
+  List<Coffee> get coffeeShop => coffeeShop;
+
+  
+
 
 }

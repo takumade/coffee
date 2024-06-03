@@ -1,5 +1,6 @@
 import 'package:coffee_app/bloc/cart_bloc.dart';
 import 'package:coffee_app/const.dart';
+import 'package:coffee_app/models/cart_list.dart';
 import 'package:coffee_app/models/coffee.dart';
 import 'package:flutter/material.dart';
 import 'package:choice/choice.dart';

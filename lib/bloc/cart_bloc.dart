@@ -2,6 +2,7 @@
 
 
 import 'package:bloc/bloc.dart';
+import 'package:coffee_app/models/cart_list.dart';
 import 'package:coffee_app/models/coffee.dart';
 
 sealed class CartEvent {
@@ -20,33 +21,7 @@ final class RemoveFromCart extends CartEvent {
 }
 
 
-class CartList {
-  List<Coffee> cart;
 
-  CartList({required this.cart});
-
-  List<Coffee> get userCart => cart;
-  
-  set cartList (List<Coffee> list){
-    cart = list;
-  }
-
-  List<Coffee> addItem(Coffee item){
-    cart.add(item);
-    return cart;
-  }
-
-  List<Coffee> removeItem(Coffee item){
-    cart.remove(item);
-    return cart;
-  }
-
-  CartList copyWith(List<Coffee> newCart){
-    return CartList(cart: newCart);
-  }
-
-  
-}
 
 class CartBloc extends Bloc<CartEvent, CartList> {
 

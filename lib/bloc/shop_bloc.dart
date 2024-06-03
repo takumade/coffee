@@ -32,8 +32,6 @@ class ShopBloc extends Bloc<ShopEvent, ShopList> {
 
   @override
   void onChange(Change<ShopList> change) {
-    // TODO: implement onChange
-
     // ignore: avoid_print
     print(change);
     super.onChange(change);

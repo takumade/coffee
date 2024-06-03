@@ -64,6 +64,13 @@ class CartBloc extends Bloc<CartEvent, CartList> {
     });
   }
 
+  @override
+  void onChange(Change<CartList> change) {
+    // ignore: avoid_print
+    print(change);
+    super.onChange(change);
+  }
+
 }
 
 

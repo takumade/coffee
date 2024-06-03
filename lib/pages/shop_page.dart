@@ -1,7 +1,8 @@
+import 'package:coffee_app/bloc/shop_bloc.dart';
 import 'package:coffee_app/components/coffee_tile.dart';
 import 'package:coffee_app/models/coffee.dart';
-import 'package:coffee_app/models/coffee_shop.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ShopPage extends StatefulWidget {
   const ShopPage({super.key});
@@ -12,7 +13,6 @@ class ShopPage extends StatefulWidget {
 
 class _ShopPageState extends State<ShopPage> {
 
-  final coffeeShop = CoffeeShop();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -27,15 +27,17 @@ class _ShopPageState extends State<ShopPage> {
             height: 25,
           ),
           Expanded(
-              child: ListView.builder(
-                  itemCount: coffeeShop.coffeeShop.length,
-                  itemBuilder: (context, index) {
-                    Coffee coffee = coffeeShop.coffeeShop[index];
-
-                    return CoffeeTile(
-                      coffee: coffee,
-                      onPressed: (){},);
-                  }))
+              child: BlocBuilder<ShopBloc, ShopList>(
+                builder: (context, state) =>  ListView.builder(
+                    itemCount: state.getShopList.length,
+                    itemBuilder: (context, index) {
+                      Coffee coffee = state.getShopList[index];
+                
+                      return CoffeeTile(
+                        coffee: coffee,
+                        onPressed: (){},);
+                    })
+              ))
         ],
       ),
     ));

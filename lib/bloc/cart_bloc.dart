@@ -52,14 +52,12 @@ class CartBloc extends Bloc<CartEvent, CartList> {
 
   CartBloc(): super(CartList(cart: [])) {
     on<AddToCart>((event, emit) {
-
       var res = state;
       res.addItem(event.coffee);
       emit(state.copyWith(res.userCart));
     });
 
     on<RemoveFromCart>((event, emit){
-      print("Moo");
       var res = state;
       res.removeItem(event.coffee);
       emit(state.copyWith(res.userCart));

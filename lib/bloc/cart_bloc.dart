@@ -1,6 +1,7 @@
 
 
 
+import 'package:bloc/bloc.dart';
 import 'package:coffee_app/models/coffee.dart';
 
 sealed class CartEvent {
@@ -18,10 +19,16 @@ final class RemoveFromCart extends CartEvent {
   RemoveFromCart({required super.coffee});
 }
 
-class Cart {
-  List<Coffee> _cart = [];
+class CartBloc extends Bloc<CartEvent, List<Coffee>> {
+  List<Coffee> _cart = []; 
 
-  List<Coffee> get userCart => _cart; 
+  CartBloc(): super([]) {
+    on<AddToCart>((event, emit) {
+
+      state.add(event.coffee);
+      emit(state);
+    });
+  }
 }
 
 

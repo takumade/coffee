@@ -14,21 +14,25 @@ class CoffeeDetailPage extends StatefulWidget {
 }
 
 class _CoffeeDetailPageState extends State<CoffeeDetailPage> {
-  void handleCartBlocListener(context, state) {
-    if (state.contains(widget.coffee)) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('${widget.coffee.name} added to cart!'),
-      ));
-    }
-  }
+
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
       backgroundColor: backgroundColor,
-      body: BlocListener<CartBloc, List<Coffee>>(
-        listener: handleCartBlocListener,
+      body: BlocListener<CartBloc, CartList>(
+        listener: (context, state) {
+    // if (state.contains(widget.coffee)) {
+     
+    // }
+
+    print("hello world");
+
+     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('${widget.coffee.name} added to cart!'),
+      ));
+  },
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
           child: Column(

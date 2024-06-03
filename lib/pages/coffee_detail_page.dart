@@ -22,16 +22,17 @@ class _CoffeeDetailPageState extends State<CoffeeDetailPage> {
         child: Scaffold(
       backgroundColor: backgroundColor,
       body: BlocListener<CartBloc, CartList>(
-        listener: (context, state) {
-    // if (state.contains(widget.coffee)) {
-     
-    // }
-
-    print("hello world");
-
-     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('${widget.coffee.name} added to cart!'),
-      ));
+        listener: (context, state) => {
+    showDialog(
+            context: context,
+            builder: (context) => const AlertDialog(
+              title: Text(
+                "Successfully Added!",
+                style: TextStyle(color: Colors.white),
+              ),
+              backgroundColor: Colors.brown,
+            ),
+          )
   },
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
@@ -43,7 +44,7 @@ class _CoffeeDetailPageState extends State<CoffeeDetailPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                          margin: EdgeInsets.symmetric(vertical: 10),
+                          margin: const EdgeInsets.symmetric(vertical: 10),
                           child: Image.asset(
                             widget.coffee.imagePath,
                             width: 300,
@@ -53,14 +54,14 @@ class _CoffeeDetailPageState extends State<CoffeeDetailPage> {
                         "Q U A N T I T Y",
                         style: TextStyle(fontSize: 20, color: Colors.brown),
                       ),
-                      SizedBox(height: 10),
-                      Amount(),
-                      SizedBox(height: 30),
+                      const SizedBox(height: 10),
+                      const Amount(),
+                      const SizedBox(height: 30),
                       const Text(
                         "S I Z E",
                         style: TextStyle(fontSize: 20, color: Colors.brown),
                       ),
-                      CupSize()
+                      const CupSize()
                     ],
                   ),
                 ),
@@ -72,9 +73,9 @@ class _CoffeeDetailPageState extends State<CoffeeDetailPage> {
                       .add(AddToCart(coffee: widget.coffee));
                 },
                 child: Container(
-                  padding: EdgeInsets.all(25),
+                  padding: const EdgeInsets.all(25),
                   width: double.infinity,
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "Add To Cart",
                       style: TextStyle(color: Colors.white, fontSize: 16),
@@ -123,7 +124,7 @@ class _AmountState extends State<Amount> {
                 color: Colors.white, borderRadius: BorderRadius.circular(6)),
             child: Text(
               _count.toString(),
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
             )),
         IconButton(
             onPressed: () {
@@ -163,7 +164,7 @@ class _CupSizeState extends State<CupSize> {
         itemCount: choices.length,
         itemBuilder: (state, i) {
           return ChoiceChip(
-              iconTheme: IconThemeData(size: 0, color: Colors.transparent),
+              iconTheme: const IconThemeData(size: 0, color: Colors.transparent),
               selected: state.selected(choices[i]),
               onSelected: state.onSelected(choices[i]),
               label: Text(

@@ -20,12 +20,17 @@ final class RemoveFromCart extends CartEvent {
 }
 
 class CartBloc extends Bloc<CartEvent, List<Coffee>> {
-  List<Coffee> _cart = []; 
 
   CartBloc(): super([]) {
     on<AddToCart>((event, emit) {
 
       state.add(event.coffee);
+      emit(state);
+    });
+
+    on<RemoveFromCart>((event, emit){
+      state.remove(event.coffee);
+
       emit(state);
     });
   }

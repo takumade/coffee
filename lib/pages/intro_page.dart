@@ -1,4 +1,5 @@
 import 'package:coffee_app/bloc/shop_bloc.dart';
+import 'package:coffee_app/models/shop_list.dart';
 import 'package:coffee_app/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

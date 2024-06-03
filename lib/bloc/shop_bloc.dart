@@ -3,6 +3,7 @@
 
 import 'package:bloc/bloc.dart';
 import 'package:coffee_app/models/coffee.dart';
+import 'package:coffee_app/models/shop_list.dart';
 import 'package:coffee_app/repository/shop_repository.dart';
 
 sealed class ShopEvent {
@@ -14,22 +15,7 @@ final class AppStarted extends ShopEvent {
   AppStarted();
 }
 
-class ShopList {
-  List<Coffee> products;
 
-  ShopList({required this.products});
-
-  List<Coffee> get getShopList => products;
-
-
-
-  ShopList copyWith(List<Coffee> newProducts){
-    products = newProducts;
-    return ShopList(products: newProducts);
-  }
-
-  
-}
 
 class ShopBloc extends Bloc<ShopEvent, ShopList> {
 
